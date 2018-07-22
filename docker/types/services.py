@@ -385,9 +385,9 @@ class UpdateConfig(dict):
         self['Parallelism'] = parallelism
         if delay is not None:
             self['Delay'] = delay
-        if failure_action not in ('pause', 'continue'):
+        if failure_action not in ('pause', 'continue', 'rollback'):
             raise errors.InvalidArgument(
-                'failure_action must be either `pause` or `continue`.'
+                'failure_action must be either `pause` or `continue` or `rollback`.'
             )
         self['FailureAction'] = failure_action
 
